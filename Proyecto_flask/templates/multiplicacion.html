@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla de Multiplicar</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="juego">
+        <h1> Tabla de Multiplicar</h1>
+        <p>Escribe un número para generar su tabla del 1 al 10.</p>
+        <form method="POST">
+            <input
+                type="number"
+                name="numero"
+                placeholder="Escribe un número"
+                required >
+            <button type="submit">
+                Generar tabla
+            </button>
+        </form>
+        {% if tabla %}
+            <div class="tabla">
+                <h2>Tabla del {{ numero }}</h2>
+                {% for linea in tabla %}
+                    <div class="operacion">
+                        {{ linea }}
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+        <a href="/" class="volver">
+            ← Volver al menú
+        </a>
+    </div>
+
+</body>
+</html>

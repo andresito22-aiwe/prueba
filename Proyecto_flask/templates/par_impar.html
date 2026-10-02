@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Par o Impar</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <div class="juego">
+        <h1>Par o Impar</h1>
+        <p>Escribe un número y descubre si es par o impar.</p>
+        <form method="POST">
+            <input 
+                type="number" 
+                name="numero" 
+                placeholder="Escribe un número"
+                required>
+            <button type="submit">
+                Comprobar
+            </button>
+        </form>
+        {% if resultado %}
+            <div class="resultado {{ tipo }}">
+                {{ resultado }}
+            </div>
+            {% if mensaje %}
+        <div class="mensaje">
+         {{ mensaje }}
+        </div>
+        {% endif %}
+        <div class="intentos">
+         <p>Números pares guardados: {{ pares }}/5</p>
+         <p>Números impares guardados: {{ impares }}/5</p>
+         <p>Total de números guardados: {{ total }}/10</p>
+        </div>
+
+        {% endif %}
+        <a href="/" class="volver">
+            ← Volver al menú
+        </a>
+    </div>
+
+</body>
+</html>

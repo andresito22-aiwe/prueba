@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="contenedor">
+        <h1>Divirtete, Aprende y Disfruta</h1>
+        <p>Selecciona un ejercicio para comenzar</p>
+        <div class="menu">
+            <a href="/par-impar" class="tarjeta">
+                <div class="icono"></div>
+                <h2>Par o Impar</h2>
+                <p>Descubre si un número es par o impar.</p>
+                <span>Jugar →</span>
+            </a>
+
+            <a href="/multiplicacion" class="tarjeta">
+                <div class="icono"></div>
+                <h2>Tabla de Multiplicar</h2>
+                <p>Practica las tablas del 1 al 10.</p>
+                <span>Jugar →</span>
+            </a>
+
+            <a href="/adivina" class="tarjeta">
+                <div class="icono"></div>
+                <h2>Adivina el Número</h2>
+                <p>Intenta descubrir el número secreto.</p>
+                <span>Jugar →</span>
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>

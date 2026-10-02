@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Adivina el Número</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="juego">
+        <h1>Adivina el Número</h1>
+        <p>
+            He pensado un número entre 1 y 100.
+            ¿adivinalo pue?
+        </p>
+        <form method="POST">
+            <input
+                type="number"
+                name="intento"
+                min="1"
+                max="100"
+                placeholder="Tu número"
+                required>
+            <button type="submit">
+                Adivinar
+            </button>
+        </form>
+        {% if mensaje %}
+            <div class="mensaje">
+                {{ mensaje }}
+            </div>
+        {% endif %}
+        <a href="/" class="volver">
+            ← Volver al menú
+        </a>
+        {% if intentos > 0 %}
+         <div class="intentos">
+             Intentos: {{ intentos }}
+        </div>
+        {% endif %}
+    </div>
+
+</body>
+</html>
